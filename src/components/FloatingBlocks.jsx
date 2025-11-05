@@ -18,9 +18,18 @@ export const FloatingBlocks = () => {
   }, [x, y]);
 
   const blocks = Array.from({ length: 12 });
-
+  // Helper function to generate positions that avoid center
+  const getEdgeBiasedPosition = () => {
+    const random = Math.random();
+    // Push values toward 0% or 100% (edges)
+    if (random < 0.5) {
+      return Math.random() * 30; // 0-30% (left/top edge)
+    } else {
+      return 70 + Math.random() * 30; // 70-100% (right/bottom edge)
+    }
+  };
   return (
-    <div className="absolute inset-0 overflow-hidden" style={{ perspective: "1000px" }}>
+    <div className="absolute inset-0 overflow-visible" style={{ perspective: "1000px" }}>
       {blocks.map((_, i) => (
         <motion.div
           key={i}
@@ -47,8 +56,8 @@ export const FloatingBlocks = () => {
             width: `${30 + Math.random() * 80}px`,
             height: `${30 + Math.random() * 80}px`,
             background: `hsl(${i * 30}, 80%, 70%)`,
-            top: `${10 + Math.random() * 60}%`,
-            left: `${Math.random() * 100}%`,
+            top: `${getEdgeBiasedPosition()}%`,
+            left: `${getEdgeBiasedPosition()}%`,
           }}
         />
       ))}
