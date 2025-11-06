@@ -36,7 +36,7 @@ export const AboutSection = () => {
     <div>
       {isVisible && (
     <motion.div
-        className="absolute top-0 left-0 w-full h-full pointer-events-auto z-10"
+        className="absolute top-0 left-0 w-full h-full pointer-events-auto z-1"
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible1 ? 1 : 0 }}
         transition={{ duration: 0.2 }}
