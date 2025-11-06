@@ -59,18 +59,21 @@ export const AboutSection = () => {
         className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center overflow-visible">
           
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-5 text-center">
           About <span className="text-primary">Me</span>
         </h2>
-            <h3 className="text-2xl font-semibold">Passionate Software Engineer</h3>
+            <h3 className="text-2xl font-semibold">A Curious Builder at Heart</h3>
             <p className="text-muted-foreground">
-              What excites me most about software engineering is the opportunity to make an impact. 
-              Whether that's through improving user experiences, solving challenging problems, 
-              or collaborating with others to bring ambitious ideas to life.
+              I’ve always been drawn to problem-solving and figuring out how things work. 
+              Software engineering lets me do that every day — but with the added bonus of 
+              creating something that makes life better for someone else.
             </p>
             <p className="text-muted-foreground">
-              I’m eager to continue learning from the best and contributing to projects that turn technology into something meaningful for others.
+              I look for opportunities where I can learn from others, try new things, and 
+              build projects that have meaning. I love collaboration, creativity, and the 
+              kind of work that makes you say, “I can’t wait to show this to someone!”
             </p>
+
 
             {/* <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
