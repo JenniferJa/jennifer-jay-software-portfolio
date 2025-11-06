@@ -34,7 +34,7 @@ export const AboutSection = () => {
   }, []);
   return (
     <div>
-      {isVisible && (
+      
     <motion.div
         className="absolute top-0 left-0 w-full h-full pointer-events-auto z-1"
         initial={{ opacity: 0 }}
@@ -46,7 +46,7 @@ export const AboutSection = () => {
           gravity={[0, -40, 0]}
           className="w-full h-full"
         />
-      </motion.div>)}
+      </motion.div>
     <section id="about" ref={aboutRef} className="py-24 px-4 relative overflow-visible">
      
       <div className="container mx-auto max-w-5xl overflow-visible">
