@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 export const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isVisible1, setIsVisible1] = useState(false);
   const aboutRef = useRef(null);
 
   useEffect(() => {
@@ -13,6 +14,7 @@ export const AboutSection = () => {
         if (entry.isIntersecting) {
           setIsVisible(true); // only set true once
         }
+        setIsVisible1(entry.isIntersecting);
       },
       {
         root: null,       // viewport
@@ -32,14 +34,19 @@ export const AboutSection = () => {
   }, []);
   return (
     <div>
-    {isVisible && (
-     <div className="absolute top-0 left-0 w-full h-full pointer-events-auto z-1">
-  <Lanyard 
-    position={[0, 0, 20]} 
-    gravity={[0, -40, 0]} 
-    className="w-full h-full"
-  />
-</div> )}
+      {isVisible && (
+    <motion.div
+        className="absolute top-0 left-0 w-full h-full pointer-events-auto z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible1 ? 1 : 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <Lanyard
+          position={[0, 0, 20]}
+          gravity={[0, -40, 0]}
+          className="w-full h-full"
+        />
+      </motion.div>)}
     <section id="about" ref={aboutRef} className="py-24 px-4 relative overflow-visible">
      
       <div className="container mx-auto max-w-5xl overflow-visible">
